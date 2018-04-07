@@ -1,0 +1,168 @@
+.wrap {
+    margin: 0 auto;
+    width: 1280px;
+    height: 3298px;
+    .container {
+        margin: 0 40px;
+    }
+    .header {
+        height: 60px;
+        background: url('./logo.png') no-repeat;
+        ul {
+            margin-left: 400px;
+            li {
+                font-size: 14px;
+                text-align: center;
+                line-height: 60px;
+                float: left;
+                width: 100px;
+                cursor: pointer;
+            }
+            .active {
+                background-color: #009ec3;
+            }
+        }
+        .login {
+            line-height: 60px;
+            height: 60px;
+            font-size: 12px;
+            text-align: right;
+            .login-btn,
+            .register-btn {
+                display: inline-block;
+                height: 20px;
+                width: 50px;
+                line-height: 20px;
+                text-align: center;
+                border-radius: 10px;
+                cursor: pointer;
+            }
+            .active {
+                background-color: #009ec3;
+            }
+        }
+    }
+    .banner {
+        overflow: hidden;
+    }
+    .content {
+        .content2,
+        .content3,
+        .content4 {
+            height: 600px;
+            background-color: #fcfcfc;
+        }
+        .content1 {
+            height: 600px;
+            background: url('./content1.png') no-repeat;
+            .content1-text {
+                width: 400px;
+                float: right;
+                margin-top: 166px;
+                font-size: 16px;
+                h1 {
+                    font-size: 24px;
+                    margin-bottom: 45px;
+                }
+                p {
+                    margin-bottom: 32px;
+                }
+            }
+        }
+        .content2 {
+            background-image: url('./content2-bg.png');
+            background-repeat: no-repeat;
+            background-position: 520px 58px;
+            .content2-text {
+                width: 508px;
+                line-height: 64px;
+                padding-top: 144px;
+                h1 {
+                    font-size: 24px;
+                }
+            }
+        }
+        .content3 {
+            overflow: hidden;
+            .content3-title {
+                margin-top: 96px;
+                text-align: center;
+                font-size: 20px;
+            }
+            .content3-box {
+                display: flex;
+                .pc,
+                .cellphone,
+                .wechat {
+                    flex-grow: 1;
+                    text-align: center;
+                    margin-top: 144px;
+                }
+                p {
+                    margin-top: 48px;
+                    font-size: 20px;
+                }
+            }
+        }
+        .content4 {
+            background-image: url('./photoframe.png'), url('./aboutus.png');
+            background-repeat: no-repeat, no-repeat;
+            background-position: 59px 86px, 0 140px;
+            overflow: hidden;
+            .content4-box {
+                width: 660px;
+                height: 311px;
+                margin-left: 480px;
+                margin-top: 160px;
+                .content4-title {
+                    text-align: right;
+                    border-right: solid 4px #009ec3;
+                    padding-right: 12px;
+                    h1{
+                        font-size: 40px;
+                    }
+                    h2{
+                        font-size: 20px;
+                    }
+                }
+                .content4-text {
+                    margin-top: 40px;
+                    font-size: 12px;
+                    line-height: 24px;
+                    p{
+                        margin-bottom: 60px;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        height: 104px;
+        background-color: #282828;
+        color: #5b5b5b;
+        text-align: center;
+        padding-top: 56px;
+        font-size: 14px;
+        hr {
+            border: 0;
+            background-color: #414141;
+            height: 1px;
+        }
+        .footer-box {
+            display: flex;
+            width: 816px;
+            margin: 0 auto;
+            .footer-box1,
+            .footer-box2,
+            .footer-box3,
+            .footer-box4 {
+                flex-grow: 1;
+                border-right: solid 1px #5b5b5b;
+                margin-top: 31px;
+            }
+            .footer-box4 {
+                border: none;
+            }
+        }
+    }
+}
