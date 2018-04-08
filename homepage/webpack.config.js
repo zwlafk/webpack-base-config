@@ -9,12 +9,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        
         index: './src/index.js',
         join: './src/join.js'
     },
     output: {
-        filename: 'js/[name].js',     //每个页面对应的主js的生成配置
+        filename: 'js/[name].js',     //每个页面对应的js的生成配置
         chunkFilename: 'js/[id].chunk.js',
         path: path.resolve(__dirname, 'dist')
     },
@@ -64,12 +63,14 @@ module.exports = {
           "window.jQuery": "jquery"
       }),
         new HtmlWebpackPlugin({
+            filename: 'index.html',
             template: './src/index.html'
         }),
         new HtmlWebpackPlugin({
+            filename: 'join.html',
             template: './src/join.html'
         }),
         new webpack.HotModuleReplacementPlugin()
-        // new ExtractTextPlugin('style.css')
+        // new ExtractTextPlugin('css/[name].css')
     ]
 };
