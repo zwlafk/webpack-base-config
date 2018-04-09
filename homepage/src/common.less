@@ -1,4 +1,10 @@
-@baseWidth: 1280px;
+a{
+    text-decoration: none;
+}
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    color: #333333;
+}
 .wrap {
     width: 100%;
 }
@@ -7,10 +13,11 @@
     overflow: hidden;
 }
 .header {
-    width: @baseWidth;
+    width: 1280px;
     margin: 0 auto;
     height: 60px;
     background: url('./logo.png') 40px no-repeat;
+    color: #333333;
     ul {
         margin-left: 400px;
         li {
@@ -23,7 +30,10 @@
         }
         .active {
             background-color: #009ec3;
-            color: #ffffff;
+            a{
+                color: #ffffff;
+            }
+
         }
     }
     .login {

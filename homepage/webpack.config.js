@@ -3,14 +3,15 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // extract-text-webpack-plugin分离css文件 不支持hmr
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
     mode: 'development',
     entry: {
         index: './src/index.js',
-        join: './src/join.js'
+        join: './src/join.js',
+        production: './src/production.js'
     },
     output: {
         filename: 'js/[name].js',     //每个页面对应的js的生成配置
@@ -18,7 +19,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     devServer: {
-        contentBase: './src/join.html',
+        contentBase: './src/',
         hot: true,
         inline:true
     },
@@ -30,12 +31,12 @@ module.exports = {
                 use: ['style-loader','css-loader']
             },{
                 test: /\.less$/,
-                // use: ExtractTextPlugin.extract({
-                //     fallback: 'style-loader',
-                //     use: ['css-loader', 'less-loader']
-                //   })
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: ['css-loader', 'less-loader']
+                  })
                 
-                use: ['style-loader','css-loader', 'less-loader']
+                // use: ['style-loader','css-loader', 'less-loader']
             },
             {
                 test: /\.(jpg|png)$/,
@@ -70,7 +71,11 @@ module.exports = {
             filename: 'join.html',
             template: './src/join.html'
         }),
-        new webpack.HotModuleReplacementPlugin()
-        // new ExtractTextPlugin('css/[name].css')
+        new HtmlWebpackPlugin({
+            filename: 'production.html',
+            template: './src/production.html'
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new ExtractTextPlugin('[name].css')
     ]
 };
